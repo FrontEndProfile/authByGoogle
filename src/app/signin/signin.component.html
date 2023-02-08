@@ -1,0 +1,35 @@
+
+<div  class="me-3" *ngIf="!user">
+    <asl-google-signin-button type='icon' shape="circle" size='large' theme="filled_blue" logo_alignment="center"></asl-google-signin-button>
+</div>
+
+<span *ngIf="user" class="d-flex w-100">
+    <div class="dropdown me-5" >
+        <a class="btn btn-light btn-outline-dark dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Admin
+        </a>
+      
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" routerLink="/Admin-home">Home Admin</a></li>
+          <li><a class="dropdown-item" routerLink="/Admin-about">About Admin</a></li>
+          <li><a class="dropdown-item" routerLink="/Admin-home">Other Admin</a></li>
+        </ul>
+      </div>
+    
+      <li class="nav-item">
+        <!-- <a class="nav-link" routerLink="/dashboard">Dashboard</a> -->
+        <a routerLink="/dashboard">
+          <div class="nav_profile overflow-hidden">
+              <img class="img-fluid mw-100" src="{{ user.photoUrl }}" alt="icon">
+          </div>
+        </a>
+      </li>
+</span>
+
+
+
+<!-- <img src="{{ user.photoUrl }}" referrerpolicy="no-referrer">
+<div>
+  <h4>{{ user.name }}</h4>
+  <p>{{ user.email }}</p>
+</div> -->
